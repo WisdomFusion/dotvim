@@ -4,10 +4,6 @@ syntax on
 " prevent vim from adding that stupid empty line at the end of every file set noeol
 set binary
 
-set encoding=utf-8
-lang messages zh_CN.UTF-8
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
 set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set fileformats=unix,dos
 
@@ -88,7 +84,7 @@ let maplocalleader = "\\"
 
 if has("win32") || has("win64")
   " 中文字体
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+  set rtp+=$HOME/.vim,$HOME/.vim/after
   set guifont=Source_Code_Pro:h12
   set guifontwide=Yahei_Consolas_Hybrid:h12
 endif
@@ -117,6 +113,7 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=2
 let NERDTreeWinSize=35
+let NERDTreeWinPos='right'
 "let NERDTreeIgnore=['CVS']
 
 let mapleader = ','
