@@ -1,7 +1,3 @@
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
 set nocompatible
 syntax on
 
@@ -15,6 +11,11 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set fileformats=unix,dos
+
+" snipmate
+filetype on
+filetype plugin on
+filetype indent on
 
 " presentation settings
 set number
@@ -62,6 +63,13 @@ set noerrorbells
 " clear recent search highlighting with space
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR> 
 
+" line tracking
+set numberwidth=5
+set cursorline
+set cursorcolumn
+" turn off cursor blinking
+set guicursor+=a:blinkon0
+
 set textwidth=79
 set formatoptions=qrn1
 "if version >= 703
@@ -103,4 +111,50 @@ if has("mouse")
   set mouse=a
 endif
 set mousehide                           " Hide mouse pointer on insert mode."
+
+" Sidebar folder navigation
+let NERDTreeShowLineNumbers=1
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=35
+"let NERDTreeIgnore=['CVS']
+
+let mapleader = ','
+noremap <Leader>, :NERDTreeToggle<cr>
+map <Leader>t :tabnew<cr>
+map <Leader>h :tabprevious<cr>
+map <Leader>l :tabnext<cr>
+map <Leader>w :tabclose<cr>
+map <Leader>pd :!perldoc %<cr>
+map <Leader>f :TlistToggle<cr>
+map <leader>tts :%s/\s\+$//<cr>
+map <leader>b :TagbarToggle<cr>
+map <leader>F :NERDTreeFind<cr>
+map <leader>R :source ~/.vimrc<cr>
+
+" Move single lines up-down
+nmap <c-up> ddkP
+nmap <c-down> ddp
+
+" Resize vertical windows
+nmap + <c-w>+
+nmap _ <c-w>-
+
+" Resize horizontal windows
+nmap > <c-w>>
+nmap < <c-w><
+
+" Move multiple lines up-down
+vmap <c-up> xkP`[V`]
+vmap <c-down> xp`[V`]
+
+" autocompletion
+imap <Leader><Tab> <C-X><C-O>
+
+" file types
+au BufRead,BufNewFile *.asd,*.lisp set filetype=lisp
+au BufRead,BufNewFile *.t,*.cgi set filetype=perl
+" markdown support - turn-on distraction free writing mode for markdown files
+"au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
+au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 
