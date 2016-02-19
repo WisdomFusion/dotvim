@@ -1,3 +1,7 @@
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 set nocompatible
 syntax on
 
@@ -5,6 +9,10 @@ syntax on
 set noeol
 set binary
 
+set encoding=utf-8
+lang messages zh_CN.UTF-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set fileformats=unix,dos
 
@@ -19,14 +27,11 @@ set ruler               " line and column number of the cursor position
 set wildmenu            " enhanced command completion
 set visualbell          " use visual bell instead of beeping
 set laststatus=2        " always show the status line
-set list
-set listchars=tab:.\ ,trail:.,extends:#,nbsp:.
 
 " behavior
                         " ignore these files when completing names and in
                         " explorer
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
-set shell=/bin/bash     " use bash for shell commands
 set hidden              " enable multiple modified buffers
 set history=1000
 set autowriteall        " Automatically save before commands like :next and :make
@@ -36,6 +41,10 @@ set completeopt=menuone,preview
 let bash_is_sh=1        " syntax shell files as bash scripts
 set cinoptions=:0,(s,u0,U1,g0,t0 " some indentation options ':h cinoptions' for details
 set modelines=5         " number of lines to check for vim: directives at the start/end of file
+
+if !(has('win16') || has('win32') || has('win64'))
+  set shell=/bin/sh
+endif
 
 set autoindent
 set tabstop=4
@@ -61,7 +70,7 @@ if exists('+colorcolumn')
 endif
 
 " folding
-set foldmethod=indent
+"set foldmethod=indent
 
 " backup settings
 set nobackup
@@ -74,12 +83,19 @@ if has('gui_running')
   " disable toolbar
   set nowrap
   set guioptions-=T
-  set lines=35 columns=120
+  set lines=35 columns=100
+  " colorscheme molokai
+endif
 
+if has("win32") || has("win64")
+  " 中文字体
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+  set guifont=Source_Code_Pro:h12
+  set guifontwide=Yahei_Consolas_Hybrid:h12
+endif
+
+if has("gui_macvim")
   set guifont=Monaco:h14
-
-  set list
-  set listchars=tab:▸\ ,eol:¬,extends:#,nbsp:.,trail:.
 endif
 
 " mouse settings
