@@ -9,8 +9,8 @@ Vim Configurations
 
 ## How to use
 
-    cd ~
-    git clone git@github.com:WisdomFusion/dotvim.git dotvim
+    git clone git@github.com:WisdomFusion/dotvim.git ~/dotvim
+    ln -s ~/docvim/ ~/.vim
     ln -s ~/docvim/vimrc ~/.vimrc
     
 ## Install on Windows
