@@ -83,15 +83,14 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 if has("win32") || has("win64")
-  " 中文字体
-  set rtp+=$HOME/.vim,$HOME/.vim/after
+  set rtp+=$HOME/.vim/vimfiles,$HOME/.vim/vimfiles/after
   set guifont=Source_Code_Pro:h12
   set guifontwide=Yahei_Consolas_Hybrid:h12
 endif
 
 if has("gui_macvim")
   set guifont=Monaco:h14
-  set rtp+=~/.vim
+  set rtp+=~/.vim/vimfiles
 endif
 
 if has('gui_running')
