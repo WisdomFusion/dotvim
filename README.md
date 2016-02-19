@@ -5,7 +5,7 @@ Vim Configurations
 
 - Vim 7.3+
 - tested on OSX(MacVim) and Windows(gVim)
-- Using Source COde Pro and Yahei Consolas Hybrid fonts on Windows, please install them first, or change them to your own favorites
+- Using *Source Code Pro* and *Yahei Consolas Hybrid* fonts on Windows, please install them first, or change them to your own favorite mono fonts
 
 ## How to use
 
