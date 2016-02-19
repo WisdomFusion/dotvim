@@ -1,8 +1,7 @@
 set nocompatible
 syntax on
 
-" prevent vim from adding that stupid empty line at the end of every file
-set noeol
+" prevent vim from adding that stupid empty line at the end of every file set noeol
 set binary
 
 set encoding=utf-8
@@ -96,6 +95,7 @@ endif
 
 if has("gui_macvim")
   set guifont=Monaco:h14
+  set rtp+=~/.vim
 endif
 
 if has('gui_running')
