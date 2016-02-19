@@ -4,13 +4,19 @@ syntax on
 " prevent vim from adding that stupid empty line at the end of every file set noeol
 set binary
 
-set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set fileformats=unix,dos
-
 " snipmate
 filetype on
 filetype plugin on
 filetype indent on
+
+set encoding=utf-8
+let &termencoding=&encoding
+language messages zh_CN.utf-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set fileformats=unix,dos
+set termencoding=utf-8
 
 " presentation settings
 set number
