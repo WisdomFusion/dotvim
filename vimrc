@@ -87,14 +87,6 @@ set noswapfile
 let mapleader = ","
 let maplocalleader = "\\"
 
-if has('gui_running')
-  " disable toolbar
-  set nowrap
-  set guioptions-=T
-  set lines=35 columns=100
-  " colorscheme molokai
-endif
-
 if has("win32") || has("win64")
   " 中文字体
   set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
@@ -104,6 +96,14 @@ endif
 
 if has("gui_macvim")
   set guifont=Monaco:h14
+endif
+
+if has('gui_running')
+  " disable toolbar
+  set nowrap
+  set guioptions-=T
+  set lines=35 columns=100
+  colorscheme molokai
 endif
 
 " mouse settings
