@@ -67,7 +67,7 @@ set noerrorbells
 " line tracking
 set numberwidth=5
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 " turn off cursor blinking
 set guicursor+=a:blinkon0
 
