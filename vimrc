@@ -107,12 +107,6 @@ if has('gui_running')
   colorscheme molokai
 endif
 
-" mouse settings
-if has("mouse")
-  set mouse=a
-endif
-set mousehide                           " Hide mouse pointer on insert mode."
-
 " Sidebar folder navigation
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
